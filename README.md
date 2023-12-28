@@ -17,12 +17,18 @@ Or simply [download a zip](https://github.com/serenity-bdd/serenity-junit-screen
 Open a command window and run:
 
     mvn clean verify
+    desde cucumber 6 el cucumber.options cambio de nombre a cucumber.filter.tags
+    mvn verify -D cucumber.filter.tags="@login2"
+    mvn verify -D cucumber.filter.tags="@login1"
+
 
 ## Use Gradle
 
 Open a command window and run:
 
     gradlew test 
+    gradle clean test  -D cucumber.filter.tags="@Login1"
+
 
 ## Viewing the reports
 
