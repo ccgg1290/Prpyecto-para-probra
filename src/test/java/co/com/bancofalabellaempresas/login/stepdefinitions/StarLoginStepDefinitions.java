@@ -36,6 +36,10 @@ public class StarLoginStepDefinitions {
         //ChromeOptions options  = new ChromeOptions();
         //options.addArguments("start-minimized");
         OnStage.setTheStage(new OnlineCast());
+
+        System.out.println("environment: "+System.getProperty("environment"));
+        System.out.println("environment: "+System.getProperty("environment.default"));
+        System.out.println("url: "+System.getProperty("default"));
     }
     @After
     public static void CloseDriver() throws IOException, InterruptedException {
