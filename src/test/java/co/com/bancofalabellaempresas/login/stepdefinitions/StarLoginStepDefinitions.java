@@ -44,7 +44,7 @@ public class StarLoginStepDefinitions {
         //options.addArguments("start-minimized");
        //environmentManager();
 
-        System.setProperty("webdriver.base.url","https://www.mozilla.org/es-MX/firefox/all/#product-desktop-release");
+        //System.setProperty("webdriver.base.url","https://www.mozilla.org/es-MX/firefox/all/#product-desktop-release");
 
         OnStage.setTheStage(new OnlineCast());
 
