@@ -4,6 +4,7 @@ package co.com.bancofalabellaempresas.login.tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnStage;
 import org.openqa.selenium.WebDriver;
 
@@ -30,8 +31,9 @@ public class LoginFalabella implements Task {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 //WaitUntil.the(CLIENTE_EMPRESARIAL, isCurrentlyVisible()).forNoMoreThan(20).seconds(),
                 //Enter.theValue(data.get(0).get("ClienteEmpresarial")).into(CLIENTE_EMPRESARIAL),
-                //Click.on(BTN_SIGIN)
-                SelectFromOptions.byVisibleText("Firefox Beta").from(SELECTPRODUCT)
+                //
+                SelectFromOptions.byVisibleText("Firefox Beta").from(SELECTPRODUCT),
+                Click.on(DESCARGAR)
 
         );
     }

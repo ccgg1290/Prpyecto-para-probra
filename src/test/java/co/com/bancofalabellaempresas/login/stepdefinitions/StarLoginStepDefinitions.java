@@ -2,6 +2,7 @@
 
 package co.com.bancofalabellaempresas.login.stepdefinitions;
 
+import Hooks.CustomWebDriverConfiguration;
 import co.com.bancofalabellaempresas.login.Exception.EnvironmentNoFound;
 import co.com.bancofalabellaempresas.login.tasks.LoginFalabella;
 import co.com.bancofalabellaempresas.login.userinterfaces.LoginPage;
@@ -13,6 +14,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 //import io.github.bonigarcia.wdm.WebDriverManager;
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.core.webdriver.driverproviders.FirefoxDriverCapabilities;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
@@ -37,6 +39,13 @@ import static org.junit.Assert.assertEquals;
 public class StarLoginStepDefinitions {
 
 
+
+    //@Managed(driver="chrome")
+    WebDriver  driver;
+    //Actor kitty = Actor.named("kitty");
+
+
+
     @Before
     public void initialConfiguration() throws EnvironmentNoFound, IOException {
         //WebDriverManager.chromedriver().setup();
@@ -45,6 +54,7 @@ public class StarLoginStepDefinitions {
        //environmentManager();
 
         //System.setProperty("webdriver.base.url","https://www.mozilla.org/es-MX/firefox/all/#product-desktop-release");
+
 
         OnStage.setTheStage(new OnlineCast());
 
@@ -59,6 +69,7 @@ public class StarLoginStepDefinitions {
     }
     @Given("I want enter to Bancofalabella Empresas")
     public void IwantEnterToBancofalabellaEmpresas() throws InterruptedException {
+
 
         System.setProperty("webdriver.base.url","https://www.mozilla.org/es-MX/firefox/all/#product-desktop-release");
         OnStage.theActorCalled("User").attemptsTo(Open.browserOn().the(LoginPage.class));
@@ -75,9 +86,9 @@ public class StarLoginStepDefinitions {
         String TEXTO = Text.of(SELECTPRODUCT).answeredBy(OnStage.theActorInTheSpotlight()).toString();
         System.out.println("El texto del elemento es: "+TEXTO);
         System.out.println("despues: ");
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                LoginFalabella.intoPage(getDriver(),newdata)
-        );
+
+        //kitty.attemptsTo(LoginFalabella.intoPage(getDriver(),newdata));
+        OnStage.theActorInTheSpotlight().attemptsTo(LoginFalabella.intoPage(getDriver(),newdata));
         Thread.sleep(10000);
     }
     @Then("See my name in the home page")

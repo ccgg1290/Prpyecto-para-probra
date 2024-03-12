@@ -16,6 +16,9 @@ import org.openqa.selenium.By;
 //@DefaultUrl("https://www.google.com")
 public class LoginPage extends  PageObject{
 
+
+
+
     public static final Target SELECTPRODUCT = Target.the("Selecionar producto")
             .located(By.id("select-product"));
 
@@ -24,6 +27,10 @@ public class LoginPage extends  PageObject{
 
 @FindBy(id="download-info-product")
 public static WebElementFacade NAVEGADOR1;
+
+
+    public static final Target DESCARGAR = Target.the("descargar")
+            .located(By.id("download-button-primary"));
 
 
 
