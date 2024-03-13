@@ -5,7 +5,9 @@ pipeline {
         stage('Test') {
             steps {
 
-                sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
+              #  sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
+
+               sh "mvn  clean verify"
             }
   
             post {                
